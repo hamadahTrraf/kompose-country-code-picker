@@ -70,8 +70,6 @@ version = properties["version"] as String
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    signAllPublications()
-
     pom {
         name.set("KomposeCountryCodePicker")
         description.set("Kompose Country Code Picker is a Jetpack Compose library based on Material 3 (M3) that provides a country code picker for Android apps.")
@@ -97,18 +95,6 @@ mavenPublishing {
             }
         }
 
-        scm {
-            connection.set("scm:git:git://github.com:joelkanyi/KomposeCountryCodePicker.git")
-            developerConnection.set("scm:git:ssh://github.com:joelkanyi/KomposeCountryCodePicker.git")
-            url.set("https://github.com/joelkanyi/KomposeCountryCodePicker")
-        }
-    }
-}
 
-nmcp {
-    publishAllPublications {
-        username = System.getenv("MAVEN_CENTRAL_USERNAME")
-        password = System.getenv("MAVEN_CENTRAL_PASSWORD")
-        publicationType = "AUTOMATIC"
     }
 }
